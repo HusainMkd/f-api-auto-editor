@@ -9,7 +9,6 @@
 *.github/workflows/build.yml
 *.github/workflows/python-publish.yml
 *.png
-*/auto_editor/*
 
 *src.mp4
 *example
