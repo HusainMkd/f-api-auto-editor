@@ -5,6 +5,7 @@
 *_ALTERED.wav
 *_ALTERED
 *_0.mp4
+*.mp4
 
 *.github/workflows/build.yml
 *.github/workflows/python-publish.yml

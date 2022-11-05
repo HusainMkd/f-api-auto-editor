@@ -1,5 +1,6 @@
 from fileinput import filename
 import fastapi as fapi
+from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import subprocess
 import uuid
@@ -12,6 +13,17 @@ def info():
         'message': 'Hello World!'
     }
 
+origins = [
+    "http://localhost", "http://localhost:8080", "http://localhost:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post('/defaultAutoEditor')
 def autoEditor(videoUpload: fapi.UploadFile = fapi.File(...), Commands=None):
